@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>E-ticaret</title>
+    <!-- Required meta tags -->
+    <!-- ctrl+k+c+l = açıklam takgı içine alma  -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/204a57ffc7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+
+
+    <style>
+      #backtopbutton{
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        border: #ccc solid 1px;
+        border-radius: 50%;
+        background-color:#cccc;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        box-shadow: none;
+          }
+  
+     </style> 
+  </head>
+  <body>
+    <header>
+      <!--nav-->
+     <nav
+        class="navbar fixed-top navbar-expand-sm navbar-light bg-light w-100 shadow-lg ">
+
+        <a class="navbar-brand text-warning p-1" href="#">Mazlum Taşkaya</a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"
+                >Ana Sayfa <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#accordionExample">S.S.S</a>
+            </li>
+            <li class="nav-item dropdown active">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Diller</a
+              >
+              <div class="dropdown-menu mt-3" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#">
+                  <img src="resimler/turkey (1).png" alt="" srcset="" /> TR
+                </a>
+                <a class="dropdown-item mt-1" href="#">
+                  <img src="resimler/united-states.png" alt="" srcset="" /> En
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <form class="form-inline my-2 my-lg-0">
+                <input
+                  id="tags"
+                  class="form-control mr-1"
+                  type="text"
+                  placeholder="Aramak için tıklayın..."
+                />
+                <button
+                  class="btn btn-outline-dark mb-0 my-2 my-sm-0"
+                  type="submit"
+                >
+                  <span class="fa-solid fa-magnifying-glass"></span>
+                </button>
+              </form>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-right">
+            <li class="nav-item dropdown active">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="fas fa-user-cog mr-2"></span>Üye</a
+              >
+              <div
+                class="dropdown-menu text-center mt-3"
+                aria-labelledby="dropdownId"
+              >
+                <button
+                  class="btn btn-outline-primary mt-2 mb-2"
+                  style="width: 8rem; border-radius: 8px"
+                  id="btn-giris"
+                >
+                  <span class="fa-solid fa-user-pen mr-2"></span> Giriş Yap
+                </button>
+                <button
+                  class="btn btn-warning mb-2 mt-2"
+                  style="width: 8rem; border-radius: 8px"
+                  id="btn-uye"
+                >
+                  <span class="fa-solid fa-user-pen mr-2"></span> Üye ol
+                </button>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="sepet"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="fa-solid fa-cart-shopping mr-2"></span>Sepetim
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
+                  >2</span
+                >
+              </a>
+            </li>
+            <li class="nav-item dropdown active mr-5">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-bars mr-2"></i>Bilgiler</a
+              >
+              <div class="dropdown-menu  fade mt-3" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#"
+                  ><span class="fa-solid fa-user"></span> Pofilim</a
+                >
+                <a class="dropdown-item" href="#"
+                  ><span class="fas fa-file-alt"></span> Kuponlarım
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning ml-1"
+                  >
+                    3</span
+                  ></a
+                >
+                <a id="sepetim" class="dropdown-item" href="#"
+                  ><span class="fa-solid fa-cart-shopping"></span> sepetim
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning"
+                    >2</span
+                  ></a
+                >
+                <a class="dropdown-item" href="#"
+                  ><span class="fas fa-envelope"></span> Mesaj
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning ml-1"
+                    >3</span
+                  ></a
+                >
+                <a class="dropdown-item" href="siparişlerim.html"
+                  ><span class="fa-solid fa-bullhorn"></span> Siparişlerim</a
+                >
+                <a class="dropdown-item" href="adreslerim.html"
+                  ><span class="fa-solid fa-location-dot"></span> Adreslerim</a
+                >
+
+                <a href="#" class="nav-link ml-3" id="sifre-unuttumm"
+                  ><span><i class="fa-solid fa-key"></i></span> Şifremi
+                  Yenile</a
+                >
+                <button class="btn btn-warning btn-sm btn-block mt-3">
+                  <a class="nav-link text-dark" href="#">
+                    <span class="fa-solid fa-right-to-bracket"></span> Çıkış</a
+                  >
+                </button>
+              </div>
+            </li>
+
+            <li class="nav-item active"></li>
+          </ul>
+        </div>
+     </nav>
+     
+    </header>
+<br><br>
+    <section> 
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-12 ">
+            <table class="table table-sm table-striped table-hover  table-secondary ">
+              
+            
+          
+              <thead>
+                <tr>
+                  <th>Sipariş Adı</th>
+                  <th>Sipariş Durumu</th>
+                  <th>Sipariş Firma</th>
+                  <th>Sipariş Tarih</th>
+                  <th>Ürün fiyatı</th>
+                  <th>#</th>
+
+                  
+                  <tbody id="Mazlum">
+                    <tr>
+                      <td>
+                        <img
+                          src="resimler/Erkek-Gomlek-Modelleri-376a.webp"
+                          width="250"
+                          height="150"
+                          alt=""
+                        />
+                      </td>
+                      <td>hazırlanıyor</td>
+                      <td>abc firma</td>
+                      <td>26 nisan 2022</td>
+                      <td>2000 TL</td>
+                      <td>
+                        <button class="btn btn-info" id="firma">
+                          <span class="fa fa-building"></span>
+                        </button>
+                        <button class="btn btn-primary" id="ürün-silmee">
+                          <span class="fa fa-edit"></span>
+                        </button>
+                        <button class="btn btn-danger" id="ürün-silme">
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </td>
+                      <tfoot>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tfoot>
+                    </tr>
+                  </tbody>
+
+                  <tbody  id="Mazlum">
+                    <tr>
+                      <td>
+                        <img
+                          src="resimler/Erkek-Esofman-Modelleri-d2ae.webp"
+                          width="250"
+                          height="150"
+                          alt=""
+                        />
+                      </td>
+                      <td>hazırlanıyor</td>
+                      <td>abc firma</td>
+                      <td>26 nisan 2022</td>
+                      <td>2000 TL</td>
+                      <td>
+                        <button class="btn btn-info" id="firma">
+                          <span class="fa fa-building"></span>
+                        </button>
+                        <button class="btn btn-primary" id="ürün-silmee">
+                          <span class="fa fa-edit"></span>
+                        </button>
+                        <button class="btn btn-danger" id="ürün-silme">
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </td>
+                      <tfoot>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tfoot>
+                    </tr>
+                  </tbody>
+
+                  <tbody id="Mazlum">
+                    <tr>
+                      <td>
+                        <img
+                          src="resimler/Erkek-Gunluk-Ayakkabi-b700.webp"
+                          width="250"
+                          height="150"
+                          alt=""
+                        />
+                      </td>
+                      <td>hazırlanıyor</td>
+                      <td>abc firma</td>
+                      <td>26 nisan 2022</td>
+                      <td>2000 TL</td>
+                      <td>
+                        <button class="btn btn-info" id="firma">
+                          <span class="fa fa-building"></span>
+                        </button>
+                        <button class="btn btn-primary" id="ürün-silmee">
+                          <span class="fa fa-edit"></span>
+                        </button>
+                        <button class="btn btn-danger" id="ürün-silme">
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </td>
+                      <tfoot>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tfoot>
+                    </tr>
+                  </tbody>
+
+                  <tbody id="Mazlum">
+                    <tr>
+                      <td>
+                        <img
+                          src="resimler/Erkek-Pantolon-Modelleri-019e.webp"
+                          width="250"
+                          height="150"
+                          alt=""
+                        />
+                      </td>
+                      <td>hazırlanıyor</td>
+                      <td>abc firma</td>
+                      <td>26 nisan 2022</td>
+                      <td>2000 TL</td>
+                      <td>
+                        <button class="btn btn-info" id="firma">
+                          <span class="fa fa-building"></span>
+                        </button>
+                        <button class="btn btn-primary" id="ürün-silmee">
+                          <span class="fa fa-edit"></span>
+                        </button>
+                        <button class="btn btn-danger" id="ürün-silme">
+                          <span class="fa fa-trash"></span>
+                        </button>
+                      </td>
+                      <tfoot>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tfoot>
+                    </tr>
+                  </tbody>
+ 
+                </tr>
+              </thead>
+            </table>
+            
+
+            
+          </div>
+        </div>
+      </div>
+       <!-- BackTopButton -->
+     <a href="#" class="btn btn-primary " id="backtopbutton"><i class="fa-solid fa-angles-up"></i></a>
+    </section>
+    <!-- Footer  başlangiç -->
+    <footer class="text-center text-lg-start bg-dark text-light">
+      <!-- Section: Social media -->
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>Sosyal ağlarda bizimle bağlantı kurun:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a href="" class="mr-5 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="mr-5 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="mr-5 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="mr-5 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="mr-5 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="mr-3 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem mr-2"></i>FİRMA ADI
+              </h6>
+              <p>
+                Here you can use rows and columns to organize your footer
+                content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">ÜRÜ</h6>
+              <p>
+                <a href="#!" class="text-reset">Angular</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">React</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Vue</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Laravel</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                KULLANIŞLI BAĞLANTILAR
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4"></h6>
+              İletişim
+
+              <p>
+                <i class="fas fa-home me-3"></i> Kars Vegas Digor Texas, NY
+                10012, TR
+              </p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                info@example.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2022 Telif Hakkı:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+          >MDBootstrap.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+   <!-- üye Giriş başlangiç -->
+   <!-- üye Giriş -->
+<div class="modal fade" id="myUye" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark bg-light">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h5 class="modal-title"></h5>
+      </div>
+  <div class="modal-body">
+    <div class="container">
+      <h3>Üye girişi</h3>
+      <form action="">
+        <div class="form-group">
+          <label for="email">E-posta</label>
+          <input type="email" class="form-control" id="user-email" name="email" placeholder="lütfen Email adresinizi giriniz" required>
+          <span id="email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="sifre">Şifre</label>
+          <input type="password" class="form-control" id="user-password" name="sifre" placeholder="Lütfen şifrenizi giriniz" required>
+          <span id="password" class="text-danger"></span>
+        </div>
+
+        <div class="checkbox ">
+          <label for="" >
+          <input type="checkbox" > Beni Hatırla</label>
+        </div>
+
+        <a href="#" class="nav-link" id="sifre-unuttum"><span><i class="fa-solid fa-key" ></i></span> Şifremi Unuttum...</a>
+
+
+        <button type="submit" id="next-btn" class="btn btn-warning btn-sm"> 
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Giriş Yap</button>
+        <button type="reset" class="btn btn-danger btn-sm">
+          <i class="fa-solid fa-trash-arrow-up"></i> Temizle</button>
+      </form>
+    </div>
+  </div>
+      <div class="modal-body">
+      <div class="modal-footer">
+        <button class="btn btn-danger  btn-block" data-dismiss="modal">Kapat</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- üye Giriş bitişi -->
+    
+<!-- üye kayıt başlangiç -->
+<div class="modal fade" id="myuye" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark bg-light">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h5 class="modal-title"></h5>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <h3>Üye Ol</h3>
+          <form action="#">
+            <div class="form-group">
+              <label for="email">E-posta</label>
+              <input class="form-control" id="user-email" type="email" name="" required placeholder="Email adresiniz">
+              <span id="vali-email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="">Telefon</label>
+              <input type="text" class="form-control" id="user-phone" required placeholder="Telefon numaranız">
+              <span id="vali-phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label for="">Şifre</label>
+              <input type="password" class="form-control" id="user-password" required placeholder="Şifre">
+              <span id="vali-password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label for="">Şifre Tekrar</label>
+            <input type="password" class="form-control" id="reuser-password" required placeholder="Şifre tekrar giriniz">
+            <span id="vali-repassword" class="text-danger"></span>
+          </div>
+          <div class="checkbox">
+            <label for="">
+            <input type="checkbox" required> Okudum, Onaylıyorum</label>
+          </div>
+            <button type="submit" class="btn btn-warning" id="btn-submit"><i class="fa-regular fa-floppy-disk"></i> Kayıt ol</button>
+            <button type="submit" class="btn btn-danger "><i class="fa-solid fa-trash-arrow-up"></i> Temizle</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-footer">
+          <button class="btn btn-danger btn-sm btn-block" data-dismiss="modal">Kapat</button>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+   <!-- üye kayıt bitişi  -->
+   
+    <!-- Şifremi Unuttum başlangıç -->
+    <div class="modal fade" id="mySifreHatırlat" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">&times;</button>
+            <h5 class="modal-title"></h5>
+          </div>
+
+          <div class="modal-body">
+            <div class="container">
+              <h4>Şifremi Unuttum</h4>
+              <form action="post" method="post">
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    required
+                    placeholder="E-posta"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="btn btn-danger" data-dismiss="modal">Kapat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sepet başlangıç -->
+    <div class="modal fade" id="sepet-id">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4><span class="fa-solid fa-cart-shopping"></span> Sepetim</h4>
+            <button class="close" data-dismiss="modal">&times;</button>
+            <h5></h5>
+          </div>
+          <div class="modal-body">
+            <h2></h2>
+            <div class="container">
+              <div class="row">
+                <div class="md-4">
+                  <img
+                    src="resimler/Erkek-Gomlek-Modelleri-376a.webp"
+                    width="350px"
+                    class="rounded-ciricle img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="md-8 mt-4 ml-4">
+                  <p>
+                    Lorem ipsum dolor sit amet.
+                    <b> <del> 120TL</del></b> 39.99TL
+                  </p>
+                </div>
+                <div class="md-4">
+                  <img
+                    src="resimler/Erkek-Gomlek-Modelleri-376a.webp"
+                    width="350px"
+                    class="rounded-ciricle img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="md-8 mt-4 ml-4">
+                  <p>
+                    Lorem ipsum dolor sit amet.
+                    <b> <del> 120TL</del></b> 39.99TL
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-dark" style="margin-right:20%;">
+              <a href="index.html" style="text-decoration:none; color: #fff;"><i class="fa-solid fa-tags"></i> Alışverişe devam et</a>
+            </button> 
+            <button class="btn btn-warning">
+              <a href="siparişlerim.html" style="text-decoration:none; color: #000;"> <i class="fa-solid fa-thumbs-up"></i> Siparişi Tamamla </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sepet bitişi -->
+
+<!-- firma bilgileri -->
+<div class="modal fade" id="modelId" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+           <div class="row">
+             <div class="m-4"><img src="resimler/turkey (1).png" alt=""></div>
+                <div class="md-8 mt-4 ml-4">
+                   <h4>FİRMA BİLGİLERİ</h4>
+                  <ul>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                  </ul>
+                </div>
+           </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- siparişi güncelle-->
+ <div class="modal fade" id="modelId" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+           <div class="row">
+             <div class="m-4"><img src="resimler/turkey (1).png" alt=""></div>
+                <div class="md-8 mt-4 ml-4">
+                  FİRMA BİLGİLERİ
+                  <ul>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                    <li class="list-group">Lorem ipsum dolor sit amet.</li>
+                  </ul>
+                </div>
+           </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        <button type="button" class="btn btn-primary">tamam</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- siparişi sil -->
+ <div class="modal fade" id="modelId2" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+           <div class="row">
+             <div class="m-4"><i class="fa fa-trash" style="color:red; font-size:25px;"></i></div>
+                <div class="md-8 mt-4 ">
+                  <h5>Ürünü silmek istediğinizden emin misiniz?</h5>
+                </div>
+           </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="sil">Sil</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">İptal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
